@@ -1,0 +1,707 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "430b2f3b-2228-4a25-bb10-84ac8063a1f7",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Categories",
+            "description": "\nManaging Categories",
+            "item": [
+                {
+                    "name": "List Categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/categories",
+                            "query": [
+                                {
+                                    "key": "Page",
+                                    "value": "16",
+                                    "description": "Which page to show.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/categories?Page=16"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get all Categories",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "53"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"cupiditate\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":2,\"name\":\"fugiat\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":3,\"name\":\"error\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":4,\"name\":\"est\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":5,\"name\":\"a\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":6,\"name\":\"aliquam\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":7,\"name\":\"dignissimos\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":8,\"name\":\"vel\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":9,\"name\":\"ab\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":10,\"name\":\"I have Changed Again\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":13,\"name\":\"Tasty Category\",\"created_at\":\"2023-01-21T18:24:39.000000Z\"},{\"id\":14,\"name\":\"Tasty\",\"created_at\":\"2023-01-21T18:43:08.000000Z\"},{\"id\":16,\"name\":\"Whatever\",\"created_at\":\"2023-01-22T08:08:35.000000Z\"},{\"id\":17,\"name\":\"Hello World\",\"created_at\":\"2023-01-22T09:31:56.000000Z\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/categories\/{category_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "52"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"cupiditate\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST Category",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"John\"}"
+                        },
+                        "description": "Create New Category",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "PUT api\/v1\/categories\/{category_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"dolorem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/v1\/categories\/{category_id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/categories\/:category_id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/categories\/:category_id",
+                            "variable": [
+                                {
+                                    "id": "category_id",
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/v1\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v1\/products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "51"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"category_id\":7,\"name\":\"eum\",\"description\":\"Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.\",\"price\":\"448.30\",\"category\":{\"id\":7,\"name\":\"dignissimos\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":2,\"category_id\":5,\"name\":\"consequuntur\",\"description\":\"Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.\",\"price\":\"396.82\",\"category\":{\"id\":5,\"name\":\"a\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":3,\"category_id\":9,\"name\":\"nihil\",\"description\":\"Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.\",\"price\":\"507.70\",\"category\":{\"id\":9,\"name\":\"ab\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":4,\"category_id\":3,\"name\":\"quia\",\"description\":\"Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.\",\"price\":\"22.42\",\"category\":{\"id\":3,\"name\":\"error\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":5,\"category_id\":2,\"name\":\"aut\",\"description\":\"Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.\",\"price\":\"581.08\",\"category\":{\"id\":2,\"name\":\"fugiat\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":6,\"category_id\":6,\"name\":\"non\",\"description\":\"Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.\",\"price\":\"165.85\",\"category\":{\"id\":6,\"name\":\"aliquam\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":7,\"category_id\":4,\"name\":\"tempore\",\"description\":\"Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.\",\"price\":\"724.92\",\"category\":{\"id\":4,\"name\":\"est\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":8,\"category_id\":10,\"name\":\"iste\",\"description\":\"Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.\",\"price\":\"925.52\",\"category\":{\"id\":10,\"name\":\"I have Changed Again\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":9,\"category_id\":8,\"name\":\"itaque\",\"description\":\"Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.\",\"price\":\"153.23\",\"category\":{\"id\":8,\"name\":\"vel\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=3\",\"prev\":null,\"next\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":3,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v1\\\/products\",\"per_page\":9,\"to\":9,\"total\":20}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v2\/user",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/user",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/v2\/categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/categories"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "50"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"cupiditate\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"},{\"id\":2,\"name\":\"fugiat\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/v2\/categories",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/categories",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/categories"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"nisi\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET api\/v2\/categories\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "49"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"cupiditate\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "PUT api\/v2\/categories\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"non\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE api\/v2\/categories\/{id}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/categories\/:id",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/categories\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "1",
+                                    "description": "The ID of the category."
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "description": "\nManaging Products",
+            "item": [
+                {
+                    "name": "List Products",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v2\/products",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v2\/products"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "Get all Products",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "48"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":1,\"category_id\":7,\"name\":\"eum\",\"description\":\"Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.\",\"price\":\"448.30\",\"category\":{\"id\":7,\"name\":\"dignissimos\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":2,\"category_id\":5,\"name\":\"consequuntur\",\"description\":\"Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.\",\"price\":\"396.82\",\"category\":{\"id\":5,\"name\":\"a\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":3,\"category_id\":9,\"name\":\"nihil\",\"description\":\"Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.\",\"price\":\"507.70\",\"category\":{\"id\":9,\"name\":\"ab\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":4,\"category_id\":3,\"name\":\"quia\",\"description\":\"Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.\",\"price\":\"22.42\",\"category\":{\"id\":3,\"name\":\"error\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":5,\"category_id\":2,\"name\":\"aut\",\"description\":\"Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.\",\"price\":\"581.08\",\"category\":{\"id\":2,\"name\":\"fugiat\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":6,\"category_id\":6,\"name\":\"non\",\"description\":\"Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.\",\"price\":\"165.85\",\"category\":{\"id\":6,\"name\":\"aliquam\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":7,\"category_id\":4,\"name\":\"tempore\",\"description\":\"Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.\",\"price\":\"724.92\",\"category\":{\"id\":4,\"name\":\"est\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":8,\"category_id\":10,\"name\":\"iste\",\"description\":\"Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.\",\"price\":\"925.52\",\"category\":{\"id\":10,\"name\":\"I have Changed Again\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}},{\"id\":9,\"category_id\":8,\"name\":\"itaque\",\"description\":\"Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.\",\"price\":\"153.23\",\"category\":{\"id\":8,\"name\":\"vel\",\"created_at\":\"2023-01-21T16:04:42.000000Z\"}}],\"links\":{\"first\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=1\",\"last\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=3\",\"prev\":null,\"next\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":3,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/127.0.0.1:8000\\\/api\\\/v2\\\/products\",\"per_page\":9,\"to\":9,\"total\":20}}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}

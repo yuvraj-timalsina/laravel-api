@@ -1,0 +1,1337 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://127.0.0.1:8000'
+paths:
+  /api/v1/categories:
+    get:
+      summary: 'List Categories'
+      operationId: listCategories
+      description: 'Get all Categories'
+      parameters:
+        -
+          in: query
+          name: Page
+          description: 'Which page to show.'
+          example: 16
+          required: false
+          schema:
+            type: integer
+            description: 'Which page to show.'
+            example: 16
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: cupiditate
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 2
+                      name: fugiat
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 3
+                      name: error
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 4
+                      name: est
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 5
+                      name: a
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 6
+                      name: aliquam
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 7
+                      name: dignissimos
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 8
+                      name: vel
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 9
+                      name: ab
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 10
+                      name: 'I have Changed Again'
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 13
+                      name: 'Tasty Category'
+                      created_at: '2023-01-21T18:24:39.000000Z'
+                    -
+                      id: 14
+                      name: Tasty
+                      created_at: '2023-01-21T18:43:08.000000Z'
+                    -
+                      id: 16
+                      name: Whatever
+                      created_at: '2023-01-22T08:08:35.000000Z'
+                    -
+                      id: 17
+                      name: 'Hello World'
+                      created_at: '2023-01-22T09:31:56.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: cupiditate
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 2
+                        name: fugiat
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 3
+                        name: error
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 4
+                        name: est
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 5
+                        name: a
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 6
+                        name: aliquam
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 7
+                        name: dignissimos
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 8
+                        name: vel
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 9
+                        name: ab
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 10
+                        name: 'I have Changed Again'
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 13
+                        name: 'Tasty Category'
+                        created_at: '2023-01-21T18:24:39.000000Z'
+                      -
+                        id: 14
+                        name: Tasty
+                        created_at: '2023-01-21T18:43:08.000000Z'
+                      -
+                        id: 16
+                        name: Whatever
+                        created_at: '2023-01-22T08:08:35.000000Z'
+                      -
+                        id: 17
+                        name: 'Hello World'
+                        created_at: '2023-01-22T09:31:56.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: cupiditate
+                        created_at:
+                          type: string
+                          example: '2023-01-21T16:04:42.000000Z'
+      tags:
+        - Categories
+      security: []
+    post:
+      summary: 'POST Category'
+      operationId: pOSTCategory
+      description: 'Create New Category'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the Category.'
+                  example: John
+              required:
+                - name
+      security: []
+  '/api/v1/categories/{category_id}':
+    get:
+      summary: ''
+      operationId: getApiV1CategoriesCategory_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: cupiditate
+                    created_at: '2023-01-21T16:04:42.000000Z'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: cupiditate
+                      created_at:
+                        type: string
+                        example: '2023-01-21T16:04:42.000000Z'
+      tags:
+        - Categories
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1CategoriesCategory_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1CategoriesCategory_id
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Categories
+      security: []
+    parameters:
+      -
+        in: path
+        name: category_id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/user:
+    get:
+      summary: ''
+      operationId: getApiV1User
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/products:
+    get:
+      summary: ''
+      operationId: getApiV1Products
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category_id: 7
+                      name: eum
+                      description: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                      price: '448.30'
+                      category:
+                        id: 7
+                        name: dignissimos
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 2
+                      category_id: 5
+                      name: consequuntur
+                      description: 'Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.'
+                      price: '396.82'
+                      category:
+                        id: 5
+                        name: a
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 3
+                      category_id: 9
+                      name: nihil
+                      description: 'Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.'
+                      price: '507.70'
+                      category:
+                        id: 9
+                        name: ab
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 4
+                      category_id: 3
+                      name: quia
+                      description: 'Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.'
+                      price: '22.42'
+                      category:
+                        id: 3
+                        name: error
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 5
+                      category_id: 2
+                      name: aut
+                      description: 'Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.'
+                      price: '581.08'
+                      category:
+                        id: 2
+                        name: fugiat
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 6
+                      category_id: 6
+                      name: non
+                      description: 'Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.'
+                      price: '165.85'
+                      category:
+                        id: 6
+                        name: aliquam
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 7
+                      category_id: 4
+                      name: tempore
+                      description: 'Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.'
+                      price: '724.92'
+                      category:
+                        id: 4
+                        name: est
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 8
+                      category_id: 10
+                      name: iste
+                      description: 'Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.'
+                      price: '925.52'
+                      category:
+                        id: 10
+                        name: 'I have Changed Again'
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 9
+                      category_id: 8
+                      name: itaque
+                      description: 'Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.'
+                      price: '153.23'
+                      category:
+                        id: 8
+                        name: vel
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v1/products?page=1'
+                    last: 'http://127.0.0.1:8000/api/v1/products?page=3'
+                    prev: null
+                    next: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 3
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/products?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/products?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v1/products'
+                    per_page: 9
+                    to: 9
+                    total: 20
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 7
+                        name: eum
+                        description: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                        price: '448.30'
+                        category:
+                          id: 7
+                          name: dignissimos
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 2
+                        category_id: 5
+                        name: consequuntur
+                        description: 'Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.'
+                        price: '396.82'
+                        category:
+                          id: 5
+                          name: a
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 3
+                        category_id: 9
+                        name: nihil
+                        description: 'Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.'
+                        price: '507.70'
+                        category:
+                          id: 9
+                          name: ab
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 4
+                        category_id: 3
+                        name: quia
+                        description: 'Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.'
+                        price: '22.42'
+                        category:
+                          id: 3
+                          name: error
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 5
+                        category_id: 2
+                        name: aut
+                        description: 'Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.'
+                        price: '581.08'
+                        category:
+                          id: 2
+                          name: fugiat
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 6
+                        category_id: 6
+                        name: non
+                        description: 'Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.'
+                        price: '165.85'
+                        category:
+                          id: 6
+                          name: aliquam
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 7
+                        category_id: 4
+                        name: tempore
+                        description: 'Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.'
+                        price: '724.92'
+                        category:
+                          id: 4
+                          name: est
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 8
+                        category_id: 10
+                        name: iste
+                        description: 'Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.'
+                        price: '925.52'
+                        category:
+                          id: 10
+                          name: 'I have Changed Again'
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 9
+                        category_id: 8
+                        name: itaque
+                        description: 'Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.'
+                        price: '153.23'
+                        category:
+                          id: 8
+                          name: vel
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 7
+                        name:
+                          type: string
+                          example: eum
+                        description:
+                          type: string
+                          example: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                        price:
+                          type: string
+                          example: '448.30'
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 7
+                            name:
+                              type: string
+                              example: dignissimos
+                            created_at:
+                              type: string
+                              example: '2023-01-21T16:04:42.000000Z'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/products?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/products?page=3'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 3
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/products?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/products?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v1/products?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v1/products'
+                      per_page:
+                        type: integer
+                        example: 9
+                      to:
+                        type: integer
+                        example: 9
+                      total:
+                        type: integer
+                        example: 20
+      tags:
+        - Endpoints
+      security: []
+  /api/v2/user:
+    get:
+      summary: ''
+      operationId: getApiV2User
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v2/categories:
+    get:
+      summary: ''
+      operationId: getApiV2Categories
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: cupiditate
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 2
+                      name: fugiat
+                      created_at: '2023-01-21T16:04:42.000000Z'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: cupiditate
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 2
+                        name: fugiat
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: cupiditate
+                        created_at:
+                          type: string
+                          example: '2023-01-21T16:04:42.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV2Categories
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: nisi
+              required:
+                - name
+      security: []
+  '/api/v2/categories/{id}':
+    get:
+      summary: ''
+      operationId: getApiV2CategoriesId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: cupiditate
+                    created_at: '2023-01-21T16:04:42.000000Z'
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        example: 1
+                      name:
+                        type: string
+                        example: cupiditate
+                      created_at:
+                        type: string
+                        example: '2023-01-21T16:04:42.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV2CategoriesId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: non
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV2CategoriesId
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v2/products:
+    get:
+      summary: 'List Products'
+      operationId: listProducts
+      description: 'Get all Products'
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category_id: 7
+                      name: eum
+                      description: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                      price: '448.30'
+                      category:
+                        id: 7
+                        name: dignissimos
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 2
+                      category_id: 5
+                      name: consequuntur
+                      description: 'Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.'
+                      price: '396.82'
+                      category:
+                        id: 5
+                        name: a
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 3
+                      category_id: 9
+                      name: nihil
+                      description: 'Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.'
+                      price: '507.70'
+                      category:
+                        id: 9
+                        name: ab
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 4
+                      category_id: 3
+                      name: quia
+                      description: 'Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.'
+                      price: '22.42'
+                      category:
+                        id: 3
+                        name: error
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 5
+                      category_id: 2
+                      name: aut
+                      description: 'Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.'
+                      price: '581.08'
+                      category:
+                        id: 2
+                        name: fugiat
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 6
+                      category_id: 6
+                      name: non
+                      description: 'Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.'
+                      price: '165.85'
+                      category:
+                        id: 6
+                        name: aliquam
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 7
+                      category_id: 4
+                      name: tempore
+                      description: 'Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.'
+                      price: '724.92'
+                      category:
+                        id: 4
+                        name: est
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 8
+                      category_id: 10
+                      name: iste
+                      description: 'Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.'
+                      price: '925.52'
+                      category:
+                        id: 10
+                        name: 'I have Changed Again'
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                    -
+                      id: 9
+                      category_id: 8
+                      name: itaque
+                      description: 'Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.'
+                      price: '153.23'
+                      category:
+                        id: 8
+                        name: vel
+                        created_at: '2023-01-21T16:04:42.000000Z'
+                  links:
+                    first: 'http://127.0.0.1:8000/api/v2/products?page=1'
+                    last: 'http://127.0.0.1:8000/api/v2/products?page=3'
+                    prev: null
+                    next: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 3
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v2/products?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v2/products?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://127.0.0.1:8000/api/v2/products'
+                    per_page: 9
+                    to: 9
+                    total: 20
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 7
+                        name: eum
+                        description: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                        price: '448.30'
+                        category:
+                          id: 7
+                          name: dignissimos
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 2
+                        category_id: 5
+                        name: consequuntur
+                        description: 'Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.'
+                        price: '396.82'
+                        category:
+                          id: 5
+                          name: a
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 3
+                        category_id: 9
+                        name: nihil
+                        description: 'Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.'
+                        price: '507.70'
+                        category:
+                          id: 9
+                          name: ab
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 4
+                        category_id: 3
+                        name: quia
+                        description: 'Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.'
+                        price: '22.42'
+                        category:
+                          id: 3
+                          name: error
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 5
+                        category_id: 2
+                        name: aut
+                        description: 'Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.'
+                        price: '581.08'
+                        category:
+                          id: 2
+                          name: fugiat
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 6
+                        category_id: 6
+                        name: non
+                        description: 'Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.'
+                        price: '165.85'
+                        category:
+                          id: 6
+                          name: aliquam
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 7
+                        category_id: 4
+                        name: tempore
+                        description: 'Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.'
+                        price: '724.92'
+                        category:
+                          id: 4
+                          name: est
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 8
+                        category_id: 10
+                        name: iste
+                        description: 'Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.'
+                        price: '925.52'
+                        category:
+                          id: 10
+                          name: 'I have Changed Again'
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                      -
+                        id: 9
+                        category_id: 8
+                        name: itaque
+                        description: 'Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.'
+                        price: '153.23'
+                        category:
+                          id: 8
+                          name: vel
+                          created_at: '2023-01-21T16:04:42.000000Z'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 7
+                        name:
+                          type: string
+                          example: eum
+                        description:
+                          type: string
+                          example: 'Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.'
+                        price:
+                          type: string
+                          example: '448.30'
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 7
+                            name:
+                              type: string
+                              example: dignissimos
+                            created_at:
+                              type: string
+                              example: '2023-01-21T16:04:42.000000Z'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v2/products?page=1'
+                      last:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v2/products?page=3'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 3
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v2/products?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v2/products?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://127.0.0.1:8000/api/v2/products?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://127.0.0.1:8000/api/v2/products'
+                      per_page:
+                        type: integer
+                        example: 9
+                      to:
+                        type: integer
+                        example: 9
+                      total:
+                        type: integer
+                        example: 20
+      tags:
+        - Products
+      security: []
+tags:
+  -
+    name: Categories
+    description: "\nManaging Categories"
+  -
+    name: Endpoints
+    description: ''
+  -
+    name: Products
+    description: "\nManaging Products"

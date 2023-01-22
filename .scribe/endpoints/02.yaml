@@ -1,0 +1,48 @@
+name: Products
+description: |-
+
+  Managing Products
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v2/products
+    metadata:
+      groupName: Products
+      groupDescription: |-
+
+        Managing Products
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'List Products'
+      description: 'Get all Products'
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"category_id":7,"name":"eum","description":"Tenetur id sint et est est dignissimos inventore. Et veritatis ut occaecati amet vel vitae. Perferendis et minima minima est minus deserunt.","price":"448.30","category":{"id":7,"name":"dignissimos","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":2,"category_id":5,"name":"consequuntur","description":"Dicta eos exercitationem nobis. Beatae architecto incidunt sint. Est molestiae eos sint dolorem et. Aut autem voluptatem dicta distinctio harum.","price":"396.82","category":{"id":5,"name":"a","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":3,"category_id":9,"name":"nihil","description":"Quibusdam magnam maiores repudiandae est. Culpa aliquid quae nostrum aliquam mollitia. Consectetur est fuga est vitae est rerum.","price":"507.70","category":{"id":9,"name":"ab","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":4,"category_id":3,"name":"quia","description":"Quis eius eveniet qui. Dolore corrupti quas sit. Voluptate quia non qui quia consequatur magni. Fugit perferendis exercitationem officia voluptatibus et natus magni. Vero repudiandae quasi a assumenda incidunt qui recusandae omnis.","price":"22.42","category":{"id":3,"name":"error","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":5,"category_id":2,"name":"aut","description":"Nihil optio architecto libero beatae et accusantium impedit. Tempora vitae incidunt nobis. Natus impedit fugit consequatur autem sapiente.","price":"581.08","category":{"id":2,"name":"fugiat","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":6,"category_id":6,"name":"non","description":"Cupiditate sed ut fugit qui nulla aliquam fugiat. Dolores a mollitia quas aliquam eius quasi. Ut dolorem aperiam deleniti et porro totam quo.","price":"165.85","category":{"id":6,"name":"aliquam","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":7,"category_id":4,"name":"tempore","description":"Facilis sequi id enim nesciunt fugiat libero sed exercitationem. Laboriosam eaque quaerat sapiente omnis aut. Eos sequi facere dolor.","price":"724.92","category":{"id":4,"name":"est","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":8,"category_id":10,"name":"iste","description":"Qui dicta nihil consequatur. Molestiae itaque ut tempora cupiditate a tempora totam. Aut et ratione praesentium quas corrupti praesentium.","price":"925.52","category":{"id":10,"name":"I have Changed Again","created_at":"2023-01-21T16:04:42.000000Z"}},{"id":9,"category_id":8,"name":"itaque","description":"Explicabo at suscipit dolores fuga nostrum voluptatem exercitationem. Et voluptas impedit eos nemo. Adipisci vero harum impedit totam. Voluptate eum illo quis optio eveniet. Ipsum distinctio itaque et ea.","price":"153.23","category":{"id":8,"name":"vel","created_at":"2023-01-21T16:04:42.000000Z"}}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=1","last":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=3","prev":null,"next":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=2"},"meta":{"current_page":1,"from":1,"last_page":3,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=1","label":"1","active":true},{"url":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=2","label":"2","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=3","label":"3","active":false},{"url":"http:\/\/127.0.0.1:8000\/api\/v2\/products?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/127.0.0.1:8000\/api\/v2\/products","per_page":9,"to":9,"total":20}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '48'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

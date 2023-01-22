@@ -1,15 +1,27 @@
 <?php
     
-    namespace App\Http\Controllers\Api;
+    namespace App\Http\Controllers\Api\V1;
     
     use App\Models\Category;
     use Illuminate\Http\Response;
     use App\Http\Controllers\Controller;
     use App\Http\Resources\CategoryResource;
     use App\Http\Requests\StoreCategoryRequest;
-    
+
+    /**
+     * @group Categories
+     *
+     * Managing Categories
+     */
     class CategoryController extends Controller
     {
+        /**
+         * List Categories
+         *
+         * Get all Categories
+         *
+         * @queryParam Page Which page to show.
+         */
         public function index()
         {
             $categories = Category::all();
@@ -22,8 +34,15 @@
         {
             return new CategoryResource($category);
         }
-        
-        
+    
+    
+        /**
+         * POST Category
+         *
+         * Create New Category
+         *
+         * @bodyParam name string required Name of the Category. Example: John
+         */
         public function store(StoreCategoryRequest $request)
         {
             $data = $request->all();
