@@ -26,7 +26,12 @@
         
         public function store(StoreCategoryRequest $request)
         {
-            $category = Category::create($request->all());
+            $data = $request->all();
+            
+            if ($request->hasFile('photo')) {
+            $data['photo'] = $request->photo->store('categories');
+        }
+            $category = Category::create($data);
             
             return new CategoryResource($category);
         }
