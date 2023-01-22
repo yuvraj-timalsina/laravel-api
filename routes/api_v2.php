@@ -20,7 +20,9 @@
         return $request->user();
     });
     
-    Route::apiResource('categories', CategoryController::class);
+    Route::group(['middleware' => 'throttle:2,1'], function () {
+        Route::apiResource('categories', CategoryController::class);
+    });
     
     Route::get('products', [ProductController::class, 'index']);
     
